@@ -1,0 +1,68 @@
+STEP 1: INFORMATION GATHERING: 
+
+
+func information_gathering():
+    The function uses the python logging module to gather logs from the different 
+    resources - including web servers, IDS and IPS systems
+
+    returns the log_details
+
+func vulnerability_analysis(log_details):
+    this function takes in the log details as an input and evaulates of the 
+    aggregated details from the information_gathering() function have a 
+    vulnerability or not: 
+
+    if vulnerability_is_detected:
+        Attempt_Exploit()
+    else:
+        additional_scans()
+
+func additional_vulnerability_scans(log_details):
+    This function takes in the log_details agaiain and checks for 
+    vulnerabilities
+
+    if vulnerability_is_detected:
+        Attempt_Exploit()
+    else:
+        final_reporting() // Add this to the final pentest report 
+
+
+func attempt_exploit()
+    Attempt to exploit the vulnerabilities that are identified under
+    vulnerability_analysis()
+
+    if exploitation is successful:
+        conduct and evaulate the Risk_Assessment
+
+        return the exploit_report
+    else: 
+        carry out alternative exploit attemps to ensure that 
+        all the options are exhausted: 
+
+    
+
+func alt_testing()
+    Perform alternative testing methods to find all  possible exploits
+
+    if secondary exploitation is successful:
+        conduct and evaulate the Risk_Assessment  
+        // Essentially, what would be the effect of this - data exfiltration?spying
+    else:
+        final_reporting() // Add this to the final pentest report 
+
+func assess_risk(exploit_results):
+    This fucntion takes in the explooit results and evaulates the effects of what the effect would be: 
+    // Essentially, what would be the effect of this - data exfiltration?spying
+
+    returns assesment_report
+
+func final_reporting():
+    This function aggregates the risk assesment report, 
+    the vulnerability report and the testing report
+
+    this is part of the results - The penTest report: 
+
+// This is also an oversimplification of a penetration testing process as done in cybersecurity: 
+
+
+

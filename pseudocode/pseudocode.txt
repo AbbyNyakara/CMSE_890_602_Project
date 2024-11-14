@@ -1,6 +1,3 @@
-STEP 1: INFORMATION GATHERING: 
-
-
 func information_gathering():
     The function uses the python logging module to gather logs from the different 
     resources - including web servers, IDS and IPS systems

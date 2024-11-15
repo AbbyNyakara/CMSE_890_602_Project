@@ -1,6 +1,6 @@
 func information_gathering():
-    The function uses the python logging module to gather logs from the different 
-    resources - including web servers, IDS and IPS systems
+    The function simulates gathering logs from the different 
+    resources - including web servers, IDS and IPS systems and SIEM systems
 
     returns the log_details
 

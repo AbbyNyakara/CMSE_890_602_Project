@@ -1,5 +1,4 @@
 import random
-import logging
 
 def information_gathering():
     """
@@ -41,4 +40,5 @@ def vulnerability_analysis(log_details):
         vulnerability_report
 
     """
+    
     pass

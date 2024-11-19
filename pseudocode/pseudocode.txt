@@ -12,7 +12,7 @@ def information_gathering():
     /* This is the reconnaisance phase where the pentester Performs network scans to gather
     information such as the IP, the open ports and vulnerabilities */
     - To keep the project simple, I will limit it to just the network scans
-    - I have created some dummy json data that I can use for thsi process. 
+    - I have created some dummy json data that I can use for this process. 
 
     return system_information (in this case network logs)
 

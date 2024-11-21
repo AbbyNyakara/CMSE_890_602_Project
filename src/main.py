@@ -1,5 +1,5 @@
 """
-This proogram simulates a cybersecurity penetration testing process.
+This program simulates a cybersecurity penetration testing process.
 
 This program emulates the key stages of a network penetration test:
 1. Preparation
@@ -41,3 +41,7 @@ def main():
     # risk_assessment_report = risk_assessment(exploit_status_report) - should have return..
 
     return pentest_report
+
+
+if __name__ == "__main__":
+    main()

@@ -1,4 +1,3 @@
-
 """
 This proogram simulates a cybersecurity penetration testing process.
 
@@ -14,6 +13,31 @@ The simulation is limited to analyzing network logs and does not perform actual 
 The reports generated in this process are not actual cases, but dummy examples. 
 """
 
+from planning_and_preparation import planning_and_preparation
+from information_gathering import information_gathering
+from vulnerability_analysis import vulnerability_analysis
+from check_vulnerability_status import check_vulnerability_status
+from attempt_exploit import attempt_exploit
+from check_exploitation_status import check_exploitation_status
+from risk_assesment import risk_assessment
 
 
+def main():
+    """
+    The main function that runs the penetration testing program functions:
+    """
+    pentest_report = []
 
+    planning_and_preparation()
+    information_gathering_report = information_gathering()
+    vulnerability_analysis_report = vulnerability_analysis(
+        information_gathering_report)
+    vulnerability_status_report = check_vulnerability_status(
+        vulnerability_analysis_report)
+    pentest_report.append(vulnerability_status_report)
+    exploit_report = attempt_exploit(vulnerability_status_report)
+    exploit_status_report = check_exploitation_status(exploit_report)
+    pentest_report.append(exploit_status_report)
+    # risk_assessment_report = risk_assessment(exploit_status_report) - should have return..
+
+    return pentest_report

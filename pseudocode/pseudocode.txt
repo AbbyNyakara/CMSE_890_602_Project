@@ -30,19 +30,10 @@ def check_vulnerability_status(vulnerability_report):
     if vulnerability_report has a vulnerability
         attempt_exploit(network) /* attempt to exploit the network */
     else:
-        /* try something else */
-        additional_vulnerability_scans(network )
-
-def additional_vulnerability_checks(vulnerability_report):
-    /* This function Performs additional vulnerability checks, incase there were none originally */
-    additional_report = perform_additional_scans(vulnerability_report)
-    if additional_report.has_vulnerability():
-        attempt_exploit(newtwork)
-    else:
         add to the final report
 
 def attempt_exploit(vulnerability_report):
-    /* This is part of the pentest process where the tester will attempt to vreak into the 
+    /* This is part of the pentest process where the tester will attempt to break into the 
     system. The tester will Try different exploitation methods (e.g., fuzzing, SQLi, trying a buffer
     overflow etc)
 
@@ -55,16 +46,6 @@ def check_exploitation_status(testing_report):
     if testing_report indicates that exploitation_successful:
         /* pass it into the risk assesment phase to check risk - e.g was he able to exfiltate data etc..
         risk_assesment(report)
-    else:
-        /* try something else to exhaust options */
-        alternative_exploitation_methods(report)
-
-def alternative_exploitation_methods(testing_report):
-    /* Attempt alternative exploitation methods, to exhaust options that a bad actor would use 
-    alternative_report = try_alternative_methods(testing_report)
-    if alternative_report.exploitation_successful():
-        risk_assessment(alternative_report)
-
     else:
         Add to the final report
 

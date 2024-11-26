@@ -24,21 +24,25 @@ from risk_assesment import risk_assessment
 
 def main():
     """
-    The main function that runs the penetration testing program functions:
+    The main function that runs the penetration testing program functions and prints the report.
     """
     pentest_report = []
 
-    planning_and_preparation()
-    information_gathering_report = information_gathering()
+    planning_and_preparation()  # working
+    information_gathering_report = information_gathering()  # working
     vulnerability_analysis_report = vulnerability_analysis(
         information_gathering_report)
     vulnerability_status_report = check_vulnerability_status(
         vulnerability_analysis_report)
     pentest_report.append(vulnerability_status_report)
     exploit_report = attempt_exploit(vulnerability_status_report)
-    exploit_status_report = check_exploitation_status(exploit_report)
+    exploit_status_report = check_exploitation_status(
+        {"exploit_simulation_results": exploit_report})
     pentest_report.append(exploit_status_report)
-    # risk_assessment_report = risk_assessment(exploit_status_report) - should have return..
+
+    # Print the final penetration testing report
+    for report in pentest_report:
+        print(report)
 
     return pentest_report
 

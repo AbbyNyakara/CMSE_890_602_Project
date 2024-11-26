@@ -1,0 +1,119 @@
+[
+    {
+        "ip_address": "192.168.1.10",
+        "open_ports": [
+            {
+                "port": 25,
+                "service": "SMTP"
+            },
+            {
+                "port": 22,
+                "service": "SSH"
+            }
+        ],
+        "operating_system": "Windows Server 2019",
+        "potential_vulnerabilities": [
+            "CVE-2020-1472 - Zerologon Privilege Escalation",
+            "CVE-2019-0708 - BlueKeep RDP Vulnerability",
+            "CVE-2021-44228 - Log4Shell Remote Code Execution"
+        ]
+    },
+    {
+        "ip_address": "192.168.1.20",
+        "open_ports": [
+            {
+                "port": 22,
+                "service": "SSH"
+            },
+            {
+                "port": 21,
+                "service": "FTP"
+            },
+            {
+                "port": 3389,
+                "service": "RDP"
+            },
+            {
+                "port": 443,
+                "service": "HTTPS"
+            }
+        ],
+        "operating_system": "Debian 10",
+        "potential_vulnerabilities": [
+            "CVE-2020-1472 - Zerologon Privilege Escalation"
+        ]
+    },
+    {
+        "ip_address": "192.168.1.30",
+        "open_ports": [
+            {
+                "port": 80,
+                "service": "HTTP"
+            },
+            {
+                "port": 443,
+                "service": "HTTPS"
+            },
+            {
+                "port": 3306,
+                "service": "MySQL"
+            },
+            {
+                "port": 21,
+                "service": "FTP"
+            }
+        ],
+        "operating_system": "Debian 10",
+        "potential_vulnerabilities": [
+            "CVE-2020-1472 - Zerologon Privilege Escalation"
+        ]
+    },
+    {
+        "ip_address": "192.168.1.40",
+        "open_ports": [
+            {
+                "port": 3306,
+                "service": "MySQL"
+            },
+            {
+                "port": 8080,
+                "service": "HTTP-Proxy"
+            }
+        ],
+        "operating_system": "Windows 10",
+        "potential_vulnerabilities": [
+            "CVE-2022-22965 - Spring4Shell Remote Code Execution",
+            "CVE-2021-34527 - PrintNightmare Remote Code Execution",
+            "CVE-2020-1472 - Zerologon Privilege Escalation"
+        ]
+    },
+    {
+        "ip_address": "192.168.1.50",
+        "open_ports": [
+            {
+                "port": 5432,
+                "service": "PostgreSQL"
+            },
+            {
+                "port": 80,
+                "service": "HTTP"
+            },
+            {
+                "port": 22,
+                "service": "SSH"
+            },
+            {
+                "port": 21,
+                "service": "FTP"
+            },
+            {
+                "port": 3306,
+                "service": "MySQL"
+            }
+        ],
+        "operating_system": "Windows 10",
+        "potential_vulnerabilities": [
+            "CVE-2019-0708 - BlueKeep RDP Vulnerability"
+        ]
+    }
+]

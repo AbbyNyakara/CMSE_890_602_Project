@@ -1,0 +1,20 @@
+site_name: PenTest Documentation
+theme:
+  name: material
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+nav:
+  - Home: index.md
+  - Functions: 
+    - Planning and Preparation: 'functions/planning_and_preparation.md'
+    - Information Gathering: 'functions/information_gathering.md'
+    - Vulnerability Analysis: 'functions/vulnerability_analysis.md'
+    - Check Vulnerability Status: 'functions/check_vulnerability_status.md'
+    - Attempt Exploit: 'functions/attempt_exploit.md'
+    - Check Exploitation Status: 'functions/check_exploitation_status.md'
+    - Risk Assesment: 'fucntions/risk_assesment.md'

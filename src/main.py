@@ -38,7 +38,6 @@ def main():
     exploit_report = attempt_exploit(vulnerability_status_report)
     exploit_status_report = check_exploitation_status(exploit_report)
     pentest_report.append(exploit_status_report)
-    # risk_assessment_report = risk_assessment(exploit_status_report) - should have return..
 
     return pentest_report
 

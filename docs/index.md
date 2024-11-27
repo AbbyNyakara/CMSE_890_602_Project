@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# Penetration Testing Sample Workflow Documentation
+![Simple Pentesting process](img.png)
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+!!! Abstract "Penetration Testing - Information"
 
-## Commands
+    Penetration testing, or "pen testing," is a security check where experts mimic real cyberattacks to spot vulnerabilities in systems,
+    networks, or applications. It’s a way to test how well existing security measures hold up, uncover potential weaknesses 
+    that hackers might exploit, and offer suggestions to strengthen defenses. Pen testing can involve manual methods, automated tools, or a mix of both, making it an essential step for staying ahead in cybersecurity.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+!!! Tip "Project Limits"
 
-## Project layout
+    The penetration testing process typically involves detailed discussions and clearly defined boundaries 
+    before gaining authorization to access any systems. In this project, no real systems were accessed or scanned. 
+    All data utilized is entirely simulated, ensuring that no actual networks were involved in the testing.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    This code is to serve as an example workflow of how a pentest process will be done
+    - The actual implementation varies across different companies and situations
+    

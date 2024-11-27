@@ -6,11 +6,11 @@ def planning_and_preparation():
     """
     Simulates the planning and preparation phase of a penetration test.
 
-    function gathers system information, defines the scope of the test,
-    and writes this information to a report file.
+    This function defines the scope and goals of the penetration test, including the systems
+    to be tested and the testing methods to be used, and documents these details in a report file.
 
     Returns:
-    report_file
+        report_file (str): The generated report file(a text file) containing the primary information.
     """
     # Define the details
     system_info = "Sample System: Linux Server"

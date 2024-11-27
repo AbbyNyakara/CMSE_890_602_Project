@@ -1,6 +1,12 @@
 site_name: PenTest Documentation
 theme:
   name: material
+  features:
+    - content.code.copy
+  palette:
+      scheme: slate
+      primary: indigo
+      accent: purple
 plugins:
   - search
   - mkdocstrings:
@@ -8,13 +14,28 @@ plugins:
         python:
           options:
             show_source: true
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+repo_url: https://github.com/AbbyNyakara/CMSE_890_602_Project
+
 nav:
-  - Home: index.md
-  - Functions: 
-    - Planning and Preparation: 'functions/planning_and_preparation.md'
-    - Information Gathering: 'functions/information_gathering.md'
-    - Vulnerability Analysis: 'functions/vulnerability_analysis.md'
-    - Check Vulnerability Status: 'functions/check_vulnerability_status.md'
-    - Attempt Exploit: 'functions/attempt_exploit.md'
-    - Check Exploitation Status: 'functions/check_exploitation_status.md'
-    - Risk Assesment: 'fucntions/risk_assesment.md'
+  - An Introduction: index.md
+  - Planning and Preparation: 'functions/planning_and_preparation.md'
+  - Information Gathering: 'functions/information_gathering.md'
+  - Vulnerability Analysis: 'functions/vulnerability_analysis.md'
+  - Check Vulnerability Status: 'functions/check_vulnerability_status.md'
+  - Attempt Exploit: 'functions/attempt_exploit.md'
+  - Check Exploitation Status: 'functions/check_exploitation_status.md'
+  - Risk Assesment: 'fucntions/risk_assesment.md'
+
+

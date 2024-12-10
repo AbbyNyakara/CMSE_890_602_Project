@@ -25,6 +25,13 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+
 
 repo_url: https://github.com/AbbyNyakara/CMSE_890_602_Project
 
@@ -36,6 +43,6 @@ nav:
   - Check Vulnerability Status: 'functions/check_vulnerability_status.md'
   - Attempt Exploit: 'functions/attempt_exploit.md'
   - Check Exploitation Status: 'functions/check_exploitation_status.md'
-  - Risk Assesment: 'fucntions/risk_assesment.md'
+  - Risk Assesment: 'functions/risk_assesment.md'
 
 

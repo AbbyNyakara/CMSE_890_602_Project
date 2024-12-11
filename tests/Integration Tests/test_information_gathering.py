@@ -1,10 +1,11 @@
+from src.information_gathering import information_gathering
 import unittest
 import json
 import os
 import sys
 from unittest.mock import patch, mock_open
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from src.information_gathering import information_gathering  # Replace 'your_module' with the actual module name
+
 
 class TestInformationGathering(unittest.TestCase):
 
@@ -32,6 +33,7 @@ class TestInformationGathering(unittest.TestCase):
 
         mock_print.assert_called_once_with("File not found")
         self.assertIsNone(result)
+
 
 if __name__ == '__main__':
     unittest.main()

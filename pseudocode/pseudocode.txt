@@ -1,5 +1,14 @@
 
-func vulnerability_analysis(log_details):
+def planning_and_preparation():
+    This function mimicks the planning and preparatioon phase of a penetration testing
+    process. 
+    This will gather system information the systems that should be tested and those
+    that should not and the allowed times of testing
+
+    return report
+
+
+def vulnerability_analysis(log_details):
     this function takes in the log details as an input and evaulates of the 
     aggregated details from the information_gathering() function have a 
     vulnerability or not: 

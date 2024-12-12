@@ -1,65 +1,45 @@
-func information_gathering():
-    The function simulates gathering logs from the different 
-    resources - including web servers, IDS and IPS systems and SIEM systems
-
-    returns the log_details
 
 func vulnerability_analysis(log_details):
     this function takes in the log details as an input and evaulates of the 
     aggregated details from the information_gathering() function have a 
     vulnerability or not: 
 
-    if vulnerability_is_detected:
-        Attempt_Exploit()
+    return vulnerability_report
+
+
+def check_vulnerability_status(vulnerability_report):
+    /* Function checks whether a vulnerability exists before attempting to exploit the vulnerability */
+
+    if vulnerability_report has a vulnerability
+        attempt_exploit(network) /* attempt to exploit the network */
     else:
-        additional_scans()
+        add to the final report
 
-func additional_vulnerability_scans(log_details):
-    This function takes in the log_details agaiain and checks for 
-    vulnerabilities
+def attempt_exploit(vulnerability_report):
+    /* This is part of the pentest process where the tester will attempt to break into the 
+    system. The tester will Try different exploitation methods (e.g., fuzzing, SQLi, trying a buffer
+    overflow etc)
 
-    if vulnerability_is_detected:
-        Attempt_Exploit()
+    testing_report = try_exploitation_methods(network)
+    return the testing report (results?)
+
+def check_exploitation_status(testing_report):
+    /* This function takes in the results from the attempted exploit and checks whether it was
+    succesful */
+    if testing_report indicates that exploitation_successful:
+        /* pass it into the risk assesment phase to check risk - e.g was he able to exfiltate data etc..
+        risk_assesment(report)
     else:
-        final_reporting() // Add this to the final pentest report 
+        Add to the final report
 
+def risk_assessment(exploitation_report):
+    /* This phase takes the report from the attempt exploit phase and evaluates the risk
+    - Assess risk (data exfiltration, system access, etc.)
+   
+    return risk_report & append to final report
 
-func attempt_exploit()
-    Attempt to exploit the vulnerabilities that are identified under
-    vulnerability_analysis()
-
-    if exploitation is successful:
-        conduct and evaulate the Risk_Assessment
-
-        return the exploit_report
-    else: 
-        carry out alternative exploit attemps to ensure that 
-        all the options are exhausted: 
-
-    
-
-func alt_testing()
-    Perform alternative testing methods to find all  possible exploits
-
-    if secondary exploitation is successful:
-        conduct and evaulate the Risk_Assessment  
-        // Essentially, what would be the effect of this - data exfiltration?spying
-    else:
-        final_reporting() // Add this to the final pentest report 
-
-func assess_risk(exploit_results):
-    This fucntion takes in the explooit results and evaulates the effects of what the effect would be: 
-    // Essentially, what would be the effect of this - data exfiltration?spying
-
-    returns assesment_report
-
-func final_reporting():
-    This function aggregates the risk assesment report, 
-    the vulnerability report and the testing report
-
-    this is part of the results - The penTest report: 
-
-// This is also an oversimplification of a penetration testing process as done in cybersecurity: 
-
-
+def final_reporting():
+    /* This is the final reporting phase for the pentest process */
+     Compile all reports
+    returns all the reports from the check vulnerabilities, check exploitation and risk assesment steps
 

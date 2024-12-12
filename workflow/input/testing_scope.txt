@@ -1,0 +1,66 @@
+PENETRATION TESTING SCOPE
+Client: Abby Security
+Test Period: January 15, 2025 - January 29, 2025
+
+1. In-Scope Items:
+   a. Network Infrastructure:
+      - Internal network (192.168.1.0/24)
+      - DMZ network (10.0.0.0/24)
+      - VPN access points
+   
+   b. Servers:
+      - Web server (192.168.1.10)
+      - Database server (192.168.1.20)
+      - File server (192.168.1.30)
+   
+   c. Applications:
+      - Corporate website (https://www.abbysec.com)
+      - Employee portal (https://portal.abbysec.com)
+      - Customer relationship management (CRM) system
+   
+   d. Cloud Services:
+      - Microsoft 365 environment (email, SharePoint)
+      - AWS EC2 instances in development environment
+   
+   e. Wireless Networks:
+      - Corporate WiFi
+      - Guest WiFi
+
+2. Out-of-Scope Items:
+   - Production database contents
+   - Employee personal devices
+   - Third-party vendor systems
+   - Physical security testing
+   - Social engineering attacks on non-consenting employees
+
+3. Test Types Authorized:
+   - External network penetration testing
+   - Internal network penetration testing
+   - Web application security assessment
+   - Wireless network security assessment
+   - Cloud configuration review
+   - Vulnerability scanning
+
+4. Restrictions:
+   - No Denial of Service (DoS) attacks
+   - No exploitation of production systems without explicit approval
+   - Testing only during business hours (9 AM - 5 PM EST)
+   - Notify POC before any critical system testing
+
+5. Rules of Engagement:
+   - All testing must be conducted from authorized IP addresses
+   - Maintain confidentiality of all findings
+   - Report critical vulnerabilities immediately to the designated POC
+   - Use only licensed and approved testing tools
+
+6. Deliverables:
+   - Detailed technical report of findings
+   - Executive summary
+   - Remediation recommendations
+   - Raw scan data
+
+7. Points of Contact:
+   - Primary: John Doe, CISO (john.doe@abbysec.com, +1-555-0123)
+   - Secondary: Jane Smith, IT Manager (jane.smith@abbysec.com, +1-555-0124)
+   - Emergency: security@abbysec.com
+

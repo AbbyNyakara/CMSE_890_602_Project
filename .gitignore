@@ -2,4 +2,5 @@
 venv/
 ./create_data.py
 **/__pycache__/
-/site/
+site/*
+

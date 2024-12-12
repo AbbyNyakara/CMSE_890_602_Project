@@ -1,0 +1,54 @@
+SYSTEMS REPORT
+Date: 2024-12-10
+Organization: Abby Security
+
+1. Network Infrastructure:
+   - Firewall: Cisco ASA 5506-X (Version 9.8)
+   - Router: Juniper SRX340 (JunOS 20.4R1)
+   - Switches: Cisco Catalyst 3750 (IOS 15.2)
+
+2. Servers:
+   2.1 Web Server:
+       - OS: Ubuntu 20.04 LTS
+       - IP: 192.168.1.10
+       - Services: Apache 2.4.41, PHP 7.4
+   
+   2.2 Database Server:
+       - OS: CentOS 8
+       - IP: 192.168.1.20
+       - Services: MySQL 8.0
+
+   2.3 File Server:
+       - OS: Windows Server 2019
+       - IP: 192.168.1.30
+       - Services: SMB, FTP
+
+3. Workstations:
+   - 50 Windows 10 Pro (Version 21H2) machines
+   - 10 MacOS Big Sur (11.6) machines
+
+4. Remote Access:
+   - VPN: OpenVPN (2.5.1)
+   - Remote Desktop Gateway: Windows Server 2019
+
+5. Security Measures:
+   - Antivirus: Symantec Endpoint Protection 14.3
+   - Intrusion Detection System: Snort 3.1.0.0
+   - Email filtering: Proofpoint
+
+6. Cloud Services:
+   - Microsoft 365 (Exchange Online, SharePoint)
+   - AWS EC2 instances for dev environment
+
+7. IoT Devices:
+   - 5 IP Cameras (Axis P3245-LV)
+   - Smart HVAC system
+
+8. Physical Security:
+   - Card-based access control system
+   - CCTV surveillance
+
+Notes:
+- Recent migration to cloud services completed last month
+- Planning to upgrade all Windows 10 machines to Windows 11 in Q1 2025
+- Known vulnerabilities in the file server pending patching

@@ -44,5 +44,6 @@ def main():
     for report in pentest_report:
         print(report)
 
+
 if __name__ == "__main__":
     main()

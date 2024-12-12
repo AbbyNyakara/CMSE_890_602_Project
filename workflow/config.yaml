@@ -1,0 +1,4 @@
+input_dir: 'input'
+output_dir: 'output'
+scripts_dir: 'scripts'
+date: '2024-12-08'

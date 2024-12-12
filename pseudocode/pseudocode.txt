@@ -1,22 +1,14 @@
 
-Penetration Testing Workflow Pseudocode
-
 def planning_and_preparation():
-    /* This function mimics the planning and preparation phase of a pentest */
-    this includes: Gather information on systems and architecture used, the newtwork etc
-    Also, the clients define the testing scope
+    This function mimicks the planning and preparatioon phase of a penetration testing
+    process. 
+    This will gather system information the systems that should be tested and those
+    that should not and the allowed times of testing
 
-    return systems_report_and_scope_report
+    return report
 
-def information_gathering():
-    /* This is the reconnaisance phase where the pentester Performs network scans to gather
-    information such as the IP, the open ports and vulnerabilities */
-    - To keep the project simple, I will limit it to just the network scans
-    - I have created some dummy json data that I can use for this process. 
 
-    return system_information (in this case network logs)
-
-def vulnerability_analysis(newtwork_logs):
+def vulnerability_analysis(log_details):
     this function takes in the log details as an input and evaulates of the 
     aggregated details from the information_gathering() function have a 
     vulnerability or not: 

@@ -1,131 +1,78 @@
 configfile: 'config.yaml'
 
+
 rule all:
-  input: config["output_dir"] + "/final_report_" + config["date"] + ".txt"
+    input:
+        "output/pentest_planning_report.txt",
+        "output/information_gathering_report.json",
+        "output/vulnerability_analysis_report.json",
+        "output/final_vulnerability_status_report.json",
+        "output/exploit_attempt_report.json",
+        "output/exploitation_status_report.json",
 
 rule planning_and_preparation:
     input:
-        "" # The preparation and planning fucntion takes no data: 
+        script = "scripts/planning_and_preparation.py"
     output:
-        # "> output/preparation_complete.txt"
-        ""
+        "output/pentest_planning_report.txt"
+        # config["output_dir"] + "/pentest_planning_report" + ".txt"
+    shell:
+        """
+        python {input.script}
+        """
 
+rule information_gathering:
+    input:
+        script = "scripts/information_gathering.py"
+    output:
+        "output/information_gathering_report.json" #edited script to output json
+    params:
+        file = "data/network_log_data.json"
+    shell:
+        """
+        python {input.script} {params.file}
+        """
 
+rule vulnerability_analysis:
+    input:
+        script = "scripts/vulnerability_analysis.py"
+    output:
+        "output/vulnerability_analysis_report.json"
+    params:
+        file = "output/information_gathering_report.json" # this is theoutput from info gathering: 
+    shell:
+        """
+        python {input.script} {params.file} {output}
+        """
 
+rule check_vulnerability_status:
+    input:
+        "output/vulnerability_analysis_report.json"
+    output:
+        "output/final_vulnerability_status_report.json"
+    run:
+        """
+        python {input.script} {params.file} {output}
+        """
 
+rule attempt_exploit:
+    input:
+        "output/vulnerability_analysis_report.json"
+    output:
+        "output/exploit_attempt_report.json"
+    run:
+        # attempt_exploit(input[0], output[0])
+        """
+        python {input.script} {params.file} {output}
+        """
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-# script:
-    #     "scripts/planning_and_preparation.py"
-# systems_report="input/systems_report.txt",
-        # testing_scope="input/testing_scope.txt"
-# rule information_gathering:
-#     input:
-#         "{output_dir}/preparation_complete.txt"
-#     output:
-#         "{output_dir}/aggregated_system_information.txt"
-#     log:
-#         "{output_dir}/logs/information_gathering.log"
-#     conda:
-#         "envs/info_gathering.yaml"
-#     threads: 4
-#     script:
-#         "{scripts_dir}/information_gathering.py"
-
-# rule vulnerability_analysis:
-#     input:
-#         "{output_dir}/aggregated_system_information.txt"
-#     output:
-#         "{output_dir}/vulnerability_report.txt"
-#     log:
-#         "{output_dir}/logs/vulnerability_analysis.log"
-#     conda:
-#         "envs/vuln_analysis.yaml"
-#     benchmark:
-#         "{output_dir}/benchmarks/vulnerability_analysis.txt"
-#     script:
-#         "{scripts_dir}/vulnerability_analysis.py"
-
-# rule check_vulnerability:
-#     input:
-#         "{output_dir}/vulnerability_report.txt"
-#     output:
-#         "{output_dir}/vulnerability_detected.txt"
-#     log:
-#         "{output_dir}/logs/check_vulnerability.log"
-#     conda:
-#         "envs/check_vuln.yaml"
-#     script:
-#         "{scripts_dir}/check_vulnerability.py"
-
-# rule attempt_exploit:
-#     input:
-#         "{output_dir}/vulnerability_detected.txt"
-#     output:
-#         "{output_dir}/testing_report.txt"
-#     log:
-#         "{output_dir}/logs/attempt_exploit.log"
-#     conda:
-#         "envs/exploit.yaml"
-#     resources:
-#         mem_mb=4000
-#     script:
-#         "{scripts_dir}/attempt_exploit.py"
-
-# rule check_exploitation_status:
-#     input:
-#         "{output_dir}/testing_report.txt"
-#     output:
-#         "{output_dir}/exploitation_status.txt"
-#     log:
-#         "{output_dir}/logs/check_exploitation_status.log"
-#     conda:
-#         "envs/check_exploit.yaml"
-#     script:
-#         "{scripts_dir}/check_exploitation_status.py"
-
-# rule risk_assessment:
-#     input:
-#         "{output_dir}/exploitation_status.txt"
-#     output:
-#         "{output_dir}/risk_assessment_report.txt"
-#     log:
-#         "{output_dir}/logs/risk_assessment.log"
-#     conda:
-#         "envs/risk_assessment.yaml"
-#     script:
-#         "{scripts_dir}/risk_assessment.py"
-
-# rule final_reporting:
-#     input:
-#         "{output_dir}/risk_assessment_report.txt"
-#     output:
-#         "{output_dir}/final_report_{date}.txt"
-#     log:
-#         "{output_dir}/logs/final_reporting.log"
-#     conda:
-#         "envs/reporting.yaml"
-#     script:
-#         "{scripts_dir}/final_reporting.py"
+rule check_exploitation_status:
+    input:
+        "output/exploit_attempt_report.json"
+    output:
+        "output/exploitation_status_report.json"
+    log:
+        "logs/check_exploitation_status.log"
+    script:
+        "scripts/check_exploitation_status.py"
 

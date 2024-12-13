@@ -1,6 +1,5 @@
 configfile: 'config.yaml'
 
-
 rule all:
     input:
         "output/pentest_planning_report.txt",
@@ -15,10 +14,10 @@ rule planning_and_preparation:
         script = "scripts/planning_and_preparation.py"
     output:
         "output/pentest_planning_report.txt"
-        # config["output_dir"] + "/pentest_planning_report" + ".txt"
+        # config["output_dir"] + "/pentest_planning_report" + ".txt" # doesnt seem to work either..
     shell:
         """
-        {input.script}
+        python {input.script}
         """
 
 rule information_gathering:
@@ -30,7 +29,7 @@ rule information_gathering:
         file = "data/network_log_data.json"
     shell:
         """
-        {input.script} {params.file}
+        python {input.script} {params.file}
         """
 
 rule vulnerability_analysis:
@@ -42,10 +41,10 @@ rule vulnerability_analysis:
     params:
         file = "output/information_gathering_report.json" # this is theoutput from info gathering: 
     shell:
-        # """
-        # python {input.script} {params.file} {output}
-        # """
-        "{input.script} {params.file} {output}"
+        """
+        python {input.script} {params.file} {output}
+        """
+
         
 
 rule check_vulnerability_status:
@@ -80,8 +79,6 @@ rule check_exploitation_status:
     log:
         "logs/check_exploitation_status.log"
     run:
-       
         """
         {input.script}
         """
-

@@ -18,7 +18,7 @@ rule planning_and_preparation:
         # config["output_dir"] + "/pentest_planning_report" + ".txt"
     shell:
         """
-        python {input.script}
+        {input.script}
         """
 
 rule information_gathering:
@@ -30,24 +30,28 @@ rule information_gathering:
         file = "data/network_log_data.json"
     shell:
         """
-        python {input.script} {params.file}
+        {input.script} {params.file}
         """
 
 rule vulnerability_analysis:
     input:
-        script = "scripts/vulnerability_analysis.py"
+        script = "scripts/vulnerability_analysis.py",
+        archive = "output/information_gathering_report.json"
     output:
         "output/vulnerability_analysis_report.json"
     params:
         file = "output/information_gathering_report.json" # this is theoutput from info gathering: 
     shell:
-        """
-        python {input.script} {params.file} {output}
-        """
+        # """
+        # python {input.script} {params.file} {output}
+        # """
+        "{input.script} {params.file} {output}"
+        
 
 rule check_vulnerability_status:
     input:
-        "output/vulnerability_analysis_report.json"
+        script = "scripts/check_vulnerability_status.py",
+        archive = "output/vulnerability_analysis_report.json"
     output:
         "output/final_vulnerability_status_report.json"
     run:
@@ -57,7 +61,8 @@ rule check_vulnerability_status:
 
 rule attempt_exploit:
     input:
-        "output/vulnerability_analysis_report.json"
+        script = "scripts/attempt_exploit.py",
+        archive = "output/vulnerability_analysis_report.json"
     output:
         "output/exploit_attempt_report.json"
     run:
@@ -68,11 +73,15 @@ rule attempt_exploit:
 
 rule check_exploitation_status:
     input:
-        "output/exploit_attempt_report.json"
+        script = "scripts/check_exploitation_status.py",
+        archive = "output/exploit_attempt_report.json"
     output:
         "output/exploitation_status_report.json"
     log:
         "logs/check_exploitation_status.log"
-    script:
-        "scripts/check_exploitation_status.py"
+    run:
+       
+        """
+        {input.script}
+        """
 

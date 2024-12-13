@@ -14,7 +14,7 @@ rule planning_and_preparation:
         script = "scripts/planning_and_preparation.py"
     output:
         "output/pentest_planning_report.txt"
-        # config["output_dir"] + "/pentest_planning_report" + ".txt" # doesnt seem to work either..
+        #config["output_dir"] + "/pentest_planning_report" + ".txt" # doesnt seem to work either..
     shell:
         """
         python {input.script}
@@ -44,8 +44,6 @@ rule vulnerability_analysis:
         """
         python {input.script} {params.file} {output}
         """
-
-        
 
 rule check_vulnerability_status:
     input:
@@ -80,5 +78,5 @@ rule check_exploitation_status:
         "logs/check_exploitation_status.log"
     run:
         """
-        {input.script}
+        python {input.script}
         """

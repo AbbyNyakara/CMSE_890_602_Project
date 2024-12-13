@@ -40,7 +40,6 @@ def main():
         {"exploit_simulation_results": exploit_report})
     pentest_report.append(exploit_status_report)
 
-
     for report in pentest_report:
         print(report)
 

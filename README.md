@@ -1,7 +1,11 @@
 # Penetration Testing Project
 
-![#](image.png)
+![#](image.png)  
 This repository contains the methodology, reports, and references used for conducting a network-focused penetration test. The objective is to identify, exploit, and assess vulnerabilities within the defined scope, and to provide insights on improving overall security posture.
+
+## Data Flow Diagram
+
+![alt text](image-1.png)
 
 ## Methodology Overview
 
@@ -34,3 +38,7 @@ For a comprehensive, step-by-step guide and detailed documentation of all tools,
 ## Disclaimer
 
 There is no actual network scanning/ information gathering done for this project. The data created and used was dummy data.
+
+## Snakemake
+Some of the challenges I had with using snakemake are documented here: 
+[External Documentation Link](https://abbynyakara.github.io/CMSE_890_602_Project/)

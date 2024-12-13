@@ -1,6 +1,5 @@
 configfile: 'config.yaml'
 
-
 rule all:
     input:
         "output/pentest_planning_report.txt",
@@ -15,7 +14,7 @@ rule planning_and_preparation:
         script = "scripts/planning_and_preparation.py"
     output:
         "output/pentest_planning_report.txt"
-        # config["output_dir"] + "/pentest_planning_report" + ".txt"
+        #config["output_dir"] + "/pentest_planning_report" + ".txt" # doesnt seem to work either..
     shell:
         """
         python {input.script}
@@ -35,7 +34,8 @@ rule information_gathering:
 
 rule vulnerability_analysis:
     input:
-        script = "scripts/vulnerability_analysis.py"
+        script = "scripts/vulnerability_analysis.py",
+        archive = "output/information_gathering_report.json"
     output:
         "output/vulnerability_analysis_report.json"
     params:
@@ -47,7 +47,8 @@ rule vulnerability_analysis:
 
 rule check_vulnerability_status:
     input:
-        "output/vulnerability_analysis_report.json"
+        script = "scripts/check_vulnerability_status.py",
+        archive = "output/vulnerability_analysis_report.json"
     output:
         "output/final_vulnerability_status_report.json"
     run:
@@ -57,7 +58,8 @@ rule check_vulnerability_status:
 
 rule attempt_exploit:
     input:
-        "output/vulnerability_analysis_report.json"
+        script = "scripts/attempt_exploit.py",
+        archive = "output/vulnerability_analysis_report.json"
     output:
         "output/exploit_attempt_report.json"
     run:
@@ -68,11 +70,13 @@ rule attempt_exploit:
 
 rule check_exploitation_status:
     input:
-        "output/exploit_attempt_report.json"
+        script = "scripts/check_exploitation_status.py",
+        archive = "output/exploit_attempt_report.json"
     output:
         "output/exploitation_status_report.json"
     log:
         "logs/check_exploitation_status.log"
-    script:
-        "scripts/check_exploitation_status.py"
-
+    run:
+        """
+        python {input.script}
+        """

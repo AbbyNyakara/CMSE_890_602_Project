@@ -1,0 +1,50 @@
+host: Abigaels-MacBook-Pro-5.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count
+--------------------------  -------
+all                               1
+attempt_exploit                   1
+check_exploitation_status         1
+check_vulnerability_status        1
+information_gathering             1
+planning_and_preparation          1
+vulnerability_analysis            1
+total                             7
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Dec 13 16:25:03 2024]
+localrule planning_and_preparation:
+    input: scripts/planning_and_preparation.py
+    output: output/pentest_planning_report.txt
+    jobid: 1
+    reason: Missing output files: output/pentest_planning_report.txt
+    resources: tmpdir=/var/folders/zm/6zmc590d0dq10mln_h0pzlqw0000gn/T
+
+
+[Fri Dec 13 16:25:03 2024]
+localrule information_gathering:
+    input: scripts/information_gathering.py
+    output: output/information_gathering_report.json
+    jobid: 2
+    reason: Missing output files: output/information_gathering_report.json
+    resources: tmpdir=/var/folders/zm/6zmc590d0dq10mln_h0pzlqw0000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule planning_and_preparation in file /Users/abigaelmogusu/Documents/MSU/CMSE 890-Andrew Project/CMSE_890_602_Project/workflow/Snakefile, line 13:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/pentest_planning_report.txt (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule information_gathering in file /Users/abigaelmogusu/Documents/MSU/CMSE 890-Andrew Project/CMSE_890_602_Project/workflow/Snakefile, line 24:
+Job 2  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/information_gathering_report.json (missing locally, parent dir contents: )
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-12-13T162503.405369.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

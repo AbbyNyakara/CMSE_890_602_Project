@@ -41,4 +41,4 @@ There is no actual network scanning/ information gathering done for this project
 
 ## Snakemake
 Some of the challenges I had with using snakemake are documented here: 
-[External Documentation Link](https://abbynyakara.github.io/CMSE_890_602_Project/)
+[External Link](https://github.com/AbbyNyakara/CMSE_890_602_Project/blob/dev/workflow/SnakeMake%20Report.pdf)

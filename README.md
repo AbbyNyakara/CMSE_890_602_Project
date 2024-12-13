@@ -1,5 +1,6 @@
 # Penetration Testing Project
 
+![#](image.png)
 This repository contains the methodology, reports, and references used for conducting a network-focused penetration test. The objective is to identify, exploit, and assess vulnerabilities within the defined scope, and to provide insights on improving overall security posture.
 
 ## Methodology Overview
